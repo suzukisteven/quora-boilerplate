@@ -1,0 +1,7 @@
+<div class="edit-controls">
+  <form action="/questions/<%= @question.id %>" method="post">
+    <input type="text" placeholder="Question Title" name="question[title]" value="<%= @question.title %>">
+    <input type="text" placeholder="Description..." name="question[description]" value="<%= @question.description %>">
+    <input type="submit" value="Update">
+  </form>  
+</div>

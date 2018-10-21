@@ -1,0 +1,17 @@
+<h2>Sign up for an account!</h2>
+<form method="post" action="/signup">
+    <input type=text placeholder="Email" name="user[username]"><br>
+    <input type=password placeholder="Password" name="user[password]"></br>
+    <input type=submit value="Sign up">
+</form>
+<!-- <form method="post" action="/">
+  <input type=submit value="Back to Home">
+</form>
+<form method="post" action="/login">
+  <input type="submit" value="Login to Account">
+</form> -->
+<a href="/">Back to Home</a></br>
+<% if !logged_in? %>
+  <a href="/login">Login to your account</a>
+<% end %>
+<%#= current_user.username %>

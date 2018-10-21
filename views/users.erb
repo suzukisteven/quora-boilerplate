@@ -1,0 +1,41 @@
+<h1><%= @user.username%>'s Profile Page</h1></br>
+<p>Username: <%= @user.username %></p></br>
+<form method=post action=/logout>
+  <input type=submit value="Logout">
+</form>
+</br>
+
+<div class="question-section">
+  <div class="input">
+    <p class="ask">Ask your Question, Son</p></br>
+    <form method="post" action="/questions">
+      <input type=text placeholder="Question Title" name="questions[title]"></br>
+      <input class="description-input" type=text placeholder="Description..." name="questions[description]"></br></br>
+      <input type=submit value="Submit Question">
+    </form>
+    </br>
+    <p>Logged in as: <%= current_user %></p>
+  </div>
+</div>
+
+<% @questions.each do |question| %>
+<div class="wrapper">
+  <div class="questions">
+    <p><strong>Title:</strong> <%= question.title %></p></br>
+    <p><strong>Description:</strong> <%= question.description %></p>
+    </br>
+    <div class="controls">
+      <form method="get" action="/questions/<%=question.id%>/edit">
+        <span class="buttons">
+          <input type="submit" value="Edit" name="update[title]">
+        </span>
+      </form>
+      <form method="post" action="/questions/<%=question.id%>/delete">
+        <span class="buttons">
+          <input type="submit" value="Delete">
+        </span>
+      </form>
+    </div>
+  </div>
+</div>
+<% end %>

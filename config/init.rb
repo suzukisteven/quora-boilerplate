@@ -27,3 +27,6 @@ set :erb, layout: :'application'
 # Load files
 Dir[APP_ROOT.join('controllers', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('helpers', '*.rb')].each { |file| require file }
+
+# Enable session secret
+set :session_secret, "my_password"
