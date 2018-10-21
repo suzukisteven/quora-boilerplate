@@ -1,26 +1,32 @@
-<h1><%= @user.username%>'s Profile Page</h1></br>
-<p>Username: <%= @user.username %></p></br>
-<form method=post action=/logout>
-  <input class ="logout-button" type="submit" value="Logout">
-</form>
+<div class="profile-header">
+  <h1><%= @user.username%>'s Profile Page</h1></br>
+  <p>Logged in as: <%=@user.username%></p>
+  <form method=post action=/logout>
+    <input class ="logout-button" type="submit" value="Logout">
+  </form>
+</div>
 </br>
 
-<div class="question-section">
+<aside class="profile-sidebar">
+  <h2>this is some random content</h2>
+</aside>
+
+<div class="submit-question">
   <div class="input">
-    <p class="ask">Ask your Question, Son</p></br>
+    <p class="ask">Ask a Question:</p></br>
     <form method="post" action="/questions">
-      <input type=text placeholder="Question Title" name="questions[title]"></br>
-      <input class="description-input" type=text placeholder="Description..." name="questions[description]"></br></br>
-      <input class="question-submit-button" type=submit value="Submit Question">
+      <input class="question-title" type=text placeholder="Question Title" name="questions[title]"></br>
+      <input class="question-input" type=text placeholder="Description..." name="questions[description]"></br></br>
+      <input class="question-submit-button" type=submit value="Ask!">
     </form>
     </br>
-    <p>Logged in as: <%= current_user %></p>
   </div>
 </div>
 
+<h1>Question's You've Asked:</h1>
 <% @questions.each do |question| %>
 <div class="wrapper">
-  <div class="questions">
+  <div class="question-item">
     <p><strong>Title:</strong> <%= question.title %></p></br>
     <p><strong>Description:</strong> <%= question.description %></p>
     </br>
