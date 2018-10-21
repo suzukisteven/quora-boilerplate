@@ -66,9 +66,12 @@ get '/questions/:id/edit' do
   erb :"questions/edit"
 end
 
-delete '/questions/:id/delete' do
+delete '/questions/:id' do
   @question = Question.find(params[:id])
-  @question.delete#(params[:question])
+  @question.destroy
+  redirect "/users/#{current_user.id}"
+
+  #(params[:question])
   # IF Update the question with the newly submitted input
   # if @question.delete(params[:question])
   #   redirect "/users/#{current_user.id}"

@@ -30,3 +30,6 @@ Dir[APP_ROOT.join('helpers', '*.rb')].each { |file| require file }
 
 # Enable session secret
 set :session_secret, "my_password"
+
+# Rack Method Override
+use Rack::MethodOverride

@@ -1,7 +1,7 @@
 <h1><%= @user.username%>'s Profile Page</h1></br>
 <p>Username: <%= @user.username %></p></br>
 <form method=post action=/logout>
-  <input type=submit value="Logout">
+  <input class ="logout-button" type="submit" value="Logout">
 </form>
 </br>
 
@@ -11,7 +11,7 @@
     <form method="post" action="/questions">
       <input type=text placeholder="Question Title" name="questions[title]"></br>
       <input class="description-input" type=text placeholder="Description..." name="questions[description]"></br></br>
-      <input type=submit value="Submit Question">
+      <input class="question-submit-button" type=submit value="Submit Question">
     </form>
     </br>
     <p>Logged in as: <%= current_user %></p>
@@ -30,8 +30,9 @@
           <input type="submit" value="Edit" name="update[title]">
         </span>
       </form>
-      <form method="post" action="/questions/<%=question.id%>/delete">
+      <form method="post" action="/questions/<%=question.id%>">
         <span class="buttons">
+          <input type="hidden" name="_method" value="DELETE">
           <input type="submit" value="Delete">
         </span>
       </form>

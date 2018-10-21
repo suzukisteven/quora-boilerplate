@@ -1,8 +1,13 @@
-<h1>Quora Clone</h1>
-<%= "Welcome #{@name}!" %></br>
-The DateTime is: <%= @variable %> !
+<h1>Quora Clone</h1></br>
+<h2><%= "Welcome to Quora, #{@name}!" %></br></h2>
+<h2>The DateTime is: <%= @variable %></h2>
 </br>
 </br>
-<form method="post" action="/signup">
-    <input type=submit value="Create Account">
-</form>
+<div class="login-container">
+  <form method="post" action="/signup">
+    <input type=submit value="Create an Account">
+  </form>
+  <form method="post" action="/login" >
+    <input type=submit value="Sign in">
+  </form>
+</div>
