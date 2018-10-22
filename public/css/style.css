@@ -246,6 +246,52 @@ p {
   padding: auto;
 }
 
+/* Edit Question Page  */
+.edit-controls {
+  border: 2px solid yellow;
+  background: #DDD;
+  width: 350px;
+  height: 225px;
+  text-align: center;
+  border-radius: 10px;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.edit-controls h2 {
+  margin: 10px auto;
+  font-family: 'Merriweather', serif;
+}
+
+.edit-controls input[type=text] {
+  height: 40px;
+  width: 250px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.edit-controls input[type=submit] {
+  text-align: center;
+  width: 250px;
+  height: 40px;
+  background-color: coral;
+  border-radius: 7px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.edit-controls input[type=submit]:hover {
+  background-color: yellow;
+  cursor: pointer;
+}
+
+/* OTHERSSSSSS  */
+
 .ask {
   text-align: left;
   font-weight: bold;
