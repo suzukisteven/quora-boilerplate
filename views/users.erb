@@ -26,7 +26,7 @@
 </div>
 
 <!-- Question Section -->
-<h1>Questions you've asked:</h1>
+<h1>Thoughtful questions you've asked:</h1>
 <% @questions.each do |question| %>
 <span class="wrapper">
   <div class="question-item">
@@ -56,12 +56,12 @@
 <% end %>
 
 <!-- Answers Section -->
-<h1>Your Answers:</h1>
+<h1>Your insightful answers:</h1>
 <% @answer.each do |answer| %>
 <div class="answer-item">
-  <p><strong><%=Question.find_by(id: answer.question_id).title%></strong></p>
-  <p><strong><%=Question.find_by(id: answer.question_id).description%></strong></p>
-  <p><%=answer.content%></p></br>
+  <p class="answer-item-question"><%= answer.question.title %></p></br>
+  <p class="answer-item-question"><%= answer.question.description %></p></br>
+  <p class="answer-item-answer"><strong><%= answer.content %></strong></p>
   <div class="controls">
     <form method="get" action="/answer/<%=answer.id%>/edit">
       <span class="buttons">

@@ -338,15 +338,21 @@ p {
   background-color: yellow;
   cursor: pointer;
 }
-
+/* Answer Item Section */
 .answer-item {
+  display: inline-block;
   text-align: center;
   border: 2px solid coral;
   border-radius: 15px;
   background-color: #EEE;
-  margin: 10 auto;
+  margin: 10 5 10 5;
   width: 450px;
   height: auto;
+}
+
+.answer-item-question {
+  margin: 0;
+  padding: 0;
 }
 
 /* OTHERSSSSSS  */
