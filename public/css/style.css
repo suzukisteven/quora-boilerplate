@@ -1,3 +1,4 @@
+/* Basic Reset  */
 * {
   margin: 0;
   padding: 0;
@@ -30,10 +31,11 @@ p {
 .login-container h1 {
   font-family: 'Merriweather', serif;
   font-size: 48px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .login-container input[type=submit] {
+  outline: none;
   text-align: center;
   width: 250px;
   height: 40px;
@@ -46,6 +48,12 @@ p {
   background-color: cornflowerblue;
   color: white;
   cursor: pointer;
+}
+
+.signin-field:focus {
+  outline: none;
+  border: 3px solid #01FF70;
+  background-color: Khaki;
 }
 
 .login-container {
@@ -69,7 +77,7 @@ p {
 }
 
 .login-form {
-  margin-top: 20%;
+  margin-top: 10%;
 }
 
 /* Sign up Page */
@@ -143,6 +151,7 @@ p {
 }
 
 .signin-container h2 {
+  font-family: 'Merriweather', serif;
   margin: 10px 0 20px;
 }
 
@@ -182,7 +191,7 @@ p {
   border: 2px solid yellow;
   background: #DDD;
   width: 404px;
-  height: 225px;
+  height: 260px;
   text-align: center;
   border-radius: 10px;
 
@@ -217,9 +226,15 @@ p {
   margin-top: 10px;
 }
 
+.question-submit-button:hover {
+  background-color: yellow;
+  cursor: pointer;
+}
+
 .question-item {
   text-align: center;
   border: 2px solid coral;
+  border-radius: 15px;
   background-color: #EEE;
   margin: 10 auto;
   width: 400px;
@@ -239,7 +254,7 @@ p {
 
 .input {
   margin: 0 auto;
-  width: 200px;
+  width: auto;
   text-align: center;
 }
 
@@ -252,14 +267,19 @@ p {
 
 .logout-button {
   float: right;
-  width: 100px;
+  height: 30px;
+  width: 200px;
+  border-radius: 10px;
+  background-color: coral;
+  border: none;
+  font-size: 14px;
 }
 
 .logout-button:hover {
   background-color: red;
   color: white;
+  cursor: pointer;
 }
-
 
 .controls {
   margin-bottom: 5px;
@@ -278,5 +298,6 @@ p {
 }
 
 .wrapper {
-  display: flex;
+  display: inline-block;
+  margin: 0 5px;
 }

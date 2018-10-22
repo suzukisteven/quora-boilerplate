@@ -2,14 +2,14 @@
   <h1><%= @user.username%>'s Profile Page</h1></br>
   <p>Logged in as: <%=@user.username%></p>
   <form method=post action=/logout>
-    <input class ="logout-button" type="submit" value="Logout">
+    <input class ="logout-button" type="submit" value="Sign Out">
   </form>
 </div>
 </br>
 
-<aside class="profile-sidebar">
-  <h2>this is some random content</h2>
-</aside>
+<!-- <aside class="profile-sidebar">
+  <h2>this is some ASIDE content</h2>
+</aside> -->
 
 <div class="submit-question">
   <div class="input">
@@ -23,9 +23,9 @@
   </div>
 </div>
 
-<h1>Question's You've Asked:</h1>
+<h1>Questions You've Asked:</h1>
 <% @questions.each do |question| %>
-<div class="wrapper">
+<span class="wrapper">
   <div class="question-item">
     <p><strong>Title:</strong> <%= question.title %></p></br>
     <p><strong>Description:</strong> <%= question.description %></p>
@@ -44,5 +44,5 @@
       </form>
     </div>
   </div>
-</div>
+</span>
 <% end %>
