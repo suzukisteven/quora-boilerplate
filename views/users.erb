@@ -1,3 +1,4 @@
+<!-- Header section -->
 <div class="profile-header">
   <h1><%= @user.username%>'s Profile Page</h1></br>
   <p>Logged in as: <%=@user.username%></p>
@@ -11,6 +12,7 @@
   <h2>this is some ASIDE content</h2>
 </aside> -->
 
+<!-- Questions Submit Form -->
 <div class="submit-question">
   <div class="input">
     <p class="ask">Ask a Question:</p></br>
@@ -43,6 +45,11 @@
           <input type="submit" value="Delete">
         </span>
       </form>
+      <form method="get" action="/questions/<%=question.id%>/answers/new">
+        <span class="buttons">
+          <input type="submit" value="Answer" name="answer">
+        </span>
+      </form>
     </div>
   </div>
 </span>
@@ -50,3 +57,23 @@
 
 <!-- Answers Section -->
 <h1>Your Answers:</h1>
+<% @answer.each do |answer| %>
+<div class="answer-item">
+  <p><strong><%=Question.find_by(id: answer.question_id).title%></strong></p>
+  <p><strong><%=Question.find_by(id: answer.question_id).description%></strong></p>
+  <p><%=answer.content%></p></br>
+  <div class="controls">
+    <form method="get" action="/answer/<%=answer.id%>/edit">
+      <span class="buttons">
+        <input type="submit" value="Edit" name="update[content]">
+      </span>
+    </form>
+    <form method="post" action="/answer/<%=answer.id%>">
+      <span class="buttons">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete">
+      </span>
+    </form>
+  </div>
+</div>
+<% end %>

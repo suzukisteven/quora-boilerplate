@@ -237,7 +237,7 @@ p {
   border-radius: 15px;
   background-color: #EEE;
   margin: 10 auto;
-  width: 400px;
+  width: 450px;
   height: auto;
 }
 
@@ -288,6 +288,65 @@ p {
 .edit-controls input[type=submit]:hover {
   background-color: yellow;
   cursor: pointer;
+}
+
+/* Answer Submit Page */
+
+.answer-form {
+  border: 2px solid yellow;
+  background: #DDD;
+  width: 350px;
+  height: 300px;
+  text-align: center;
+  border-radius: 10px;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.answer-form h2 {
+  margin: 10 auto;
+}
+
+.answer-form p {
+  color: #000;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.answer-form input[type=text] {
+  height: 100px;
+  width: 250px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.answer-form input[type=submit] {
+  text-align: center;
+  width: 250px;
+  height: 40px;
+  background-color: coral;
+  border-radius: 7px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.answer-form input[type=submit]:hover {
+  background-color: yellow;
+  cursor: pointer;
+}
+
+.answer-item {
+  text-align: center;
+  border: 2px solid coral;
+  border-radius: 15px;
+  background-color: #EEE;
+  margin: 10 auto;
+  width: 450px;
+  height: auto;
 }
 
 /* OTHERSSSSSS  */

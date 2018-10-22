@@ -1,0 +1,8 @@
+<div class="answer-form">
+  <form action="/questions/<%=@question.id%>/answers" method="post">
+    <p><%=@question.title%></p>
+    <p><%=@question.description%></p>
+    <input type="text" placeholder="Type your answer here..." name="answer[content]"></br>
+    <input type="submit" value="Answer!">
+  </form>
+</div>

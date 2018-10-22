@@ -4,7 +4,7 @@ require 'date'
 after{ActiveRecord::Base.connection.close}
 enable :sessions
 
-set :method_override, true
+# set :method_override, true
 set :run, true
 
 get '/' do
@@ -42,6 +42,7 @@ get '/questions' do
 end
 
 post '/questions' do
+  # @newQuestion = Question.new(params[:questions])
   @newQuestion = current_user.questions.new(params[:questions])
   if @newQuestion.save
     redirect "/users/#{current_user.id}"
@@ -80,9 +81,51 @@ delete '/questions/:id' do
   # end
 end
 
+get '/questions/:question_id/answers/new' do
+  @question = Question.find(params[:question_id])
+  erb :"answers/new"
+end
+
+post '/questions/:question_id/answers' do
+  @answer = Answer.new(params[:answer])
+  @answer.question_id = params[:question_id]
+  @answer.user_id = current_user.id
+  ### OR
+  # @question = Question.find(params[:question_id])
+  # answer = @question.answer.new(params[:answer])
+  # answer.user = current_user
+  if @answer.save
+    redirect "/users/#{current_user.id}"
+  else
+    erb :"answers/new"
+  end
+end
+
+
+get '/answer/:id/edit' do
+  @answer = Answer.find(params[:id])
+  erb :"answers/edit-answer"
+end
+
+post '/answer/:id' do
+  @answer = Answer.find(params[:id])
+  if @answer.update(params[:answer])
+    redirect "/users/#{current_user.id}"
+  else
+    erb :"answers/edit-answer"
+  end
+end
+
+delete '/answer/:id' do
+  @answer = Answer.find(params[:id])
+  @answer.destroy
+  redirect "/users/#{current_user.id}"
+end
+
 get '/users/:id' do
   @user = User.find(params[:id])
-  @questions = @user.questions
+  @questions = @user.questions.order(:id)
+  @answer = @user.answers.order(:id)
   erb :"users"
 end
 

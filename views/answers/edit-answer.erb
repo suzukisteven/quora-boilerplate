@@ -1,0 +1,7 @@
+<div class="edit-answer">
+  <h2>Edit your Answer</h2>
+  <form action="/answer/<%= @answer.id %>" method="post">
+    <input type="text" name="answer[content]" value="<%=@answer.content%>">
+    <input type="submit" value="Update">
+  </form>
+</div>
