@@ -74,6 +74,17 @@
         <input type="submit" value="Delete">
       </span>
     </form>
+    <div class="vote-controls">
+      <form method="post" action="/answer/<%=answer.id%>/votes">
+        <input type="hidden" name="_method" value="TRUE">
+        <input type="submit" value="Vote" name="vote[upvote]">
+      </form>
+      <form method="post" action="/answer/<%=answer.id%>/delete">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Remove Vote">
+      </form>
+      <p><strong>Upvotes:</strong> <%=Vote.where(answer_id: answer.id, upvote: true).count%></p>
+    </div>
   </div>
 </div>
 <% end %>

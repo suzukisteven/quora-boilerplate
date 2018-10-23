@@ -355,6 +355,28 @@ p {
   padding: 0;
 }
 
+/* Edit Answer Page */
+.edit-answer {
+  border: 2px solid yellow;
+  background: #DDD;
+  width: 404px;
+  height: 260px;
+  text-align: center;
+  border-radius: 10px;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto auto 15px auto;
+}
+
+/* Vote Controls */
+
+.vote-controls input {
+  margin-bottom: 10px;
+}
+
 /* OTHERSSSSSS  */
 
 .ask {
